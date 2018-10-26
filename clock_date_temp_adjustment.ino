@@ -4,20 +4,19 @@
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
-#define DHTPIN A3 // pino do dht11 conectado
-#define DHTTYPE DHT11 // modelo do dth11
+#define DHTPIN A3 // pino que estamos conectado
+#define DHTTYPE DHT11 // DHT 11
+
+#define OLED_ADDR   0x3C
 DHT dht(DHTPIN, DHTTYPE);
 
-#define OLED_ADDR   0x3C //endereço do oled
-RTC_DS1307 RTC; // modelo do rtc
-Adafruit_SSD1306 display(-1); // modelo do display
+RTC_DS1307 RTC;
+Adafruit_SSD1306 display(-1);
 
-// checa tamanho do display
 #if (SSD1306_LCDHEIGHT != 64)
 #error("Height incorrect, please fix Adafruit_SSD1306.h!");
 #endif
 
-// variáveis
 int hourupg;
 int minupg;
 int yearupg;
@@ -27,6 +26,7 @@ int menu = 0;
 
 void setup()
 {
+  
   pinMode(6, INPUT); // set menu
   pinMode(7, INPUT); // button +
   pinMode(8, INPUT); //button -
