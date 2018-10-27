@@ -4,7 +4,7 @@
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
-#define DHTPIN A3 // pino que estamos conectado
+#define DHTPIN A3 // pino em que está conectado
 #define DHTTYPE DHT11 // DHT 11
 
 #define OLED_ADDR   0x3C
@@ -27,9 +27,9 @@ int menu = 0;
 void setup()
 {
   
-  pinMode(6, INPUT); // set menu
-  pinMode(7, INPUT); // button +
-  pinMode(8, INPUT); //button -
+  pinMode(6, INPUT); // entra no menu
+  pinMode(7, INPUT); // botão +
+  pinMode(8, INPUT); //botão -
 
   Wire.begin();
   RTC.begin();
